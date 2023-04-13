@@ -51,9 +51,9 @@
 //     return result;
 // }
 
-const carArray = ["Mercedes", "BMW", "Toyota", "Subaru", "Volkswagen"]
+// const carArray = ["Mercedes", "BMW", "Toyota", "Subaru", "Volkswagen"]
 
-function getcarArray (array) {
-    return `${array[0]}, ${array[array.length-1]}`
-}
-console.log(getcarArray(carArray))
+// function getcarArray (array) {
+//     return `${array[0]}, ${array[array.length-1]}`
+// }
+// console.log(getcarArray(carArray))
