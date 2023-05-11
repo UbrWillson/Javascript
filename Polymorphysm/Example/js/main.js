@@ -12,7 +12,10 @@ window.addEventListener("load", () => {
       new Circle(30),
       new Rectangle(33, 64),
       new Rectangle(120, 93),
-      new Rectangle(66, 74)
+      new Rectangle(66, 74),
+      new Trinagle(5,10),
+      new Trinagle(15,30)
+      // Triangles has been added(One of the homework tasks)
     ];
 
     let k = 0;
