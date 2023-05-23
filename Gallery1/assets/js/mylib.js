@@ -13,7 +13,7 @@ constructor() {
         this._gallery.show(1000);
         for (let i = 1; i<= 5; i++) {
             $('<img>', { 
-                src: `assets/img/cats/c${i}.jpg`,
+                src: `assets/img/cats/c_${i}.jpg`,
                 class: 'mini'
              }).appendTo(this._gallery);
         }
