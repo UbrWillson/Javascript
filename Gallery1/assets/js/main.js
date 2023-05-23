@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(() => {
     // or u can write $(() => {})
     // 1
     console.log('main scenery of gallery 1 is working')
@@ -7,4 +7,7 @@ $(document).ready(() => {
 
     // tests
     controller.activateNav();
+    controller.activateBack();
+    controller.activateMini();
+    controller.activateRotate();
 });
