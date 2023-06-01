@@ -39,7 +39,7 @@ colors = [                      // масив кольорів для зафар
         g.stroke();
         // next
 
-        g.fillstyle = this.colors[1];
+        g.fillStyle = this.colors[1];
         g.fillRect(50, 50, 600, 300);
         
     }
