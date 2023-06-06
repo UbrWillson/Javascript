@@ -3,7 +3,7 @@ export class Drawer {
 
 context = null;                 // контекст графічної панелі canvas
 colors = [                      // масив кольорів для зафарбовування діаграм
-    'red','green','blue','purple','orange','grey','darkcyan','bisque','silver','lavander','navy'
+    'red', 'green', 'blue', 'purple', 'orange', 'grey', 'darkcyan', 'bisque', 'silver', 'lavender', 'navy'
     ];
     canvasWidth = 700;
     canvasHeight = 500;
@@ -11,11 +11,11 @@ colors = [                      // масив кольорів для зафар
     constructor() {
 
         console.log('Drawer object is working');
-        this.initContext();
+        this._initContext();
         this.initCanvas();
     }
 
-    initContext() {
+    _initContext() {
         const canvas = document.getElementById('canvas');
         this.context = canvas.getContext('2d');
     }
@@ -27,7 +27,7 @@ colors = [                      // масив кольорів для зафар
 
     }
 
-    buildAxios(g) {
+    _buildAxios(g) {
         g.clearRect(0,0,this.canvasWidth,this.canvasHeight);
         g.fillstyle = 'gray';
         g.lineWidth = 1;
@@ -38,10 +38,31 @@ colors = [                      // масив кольорів для зафар
         g.lineTo(this.canvasWidth - 10, this.canvasHeight - 10)
         g.stroke();
         // next
+  
+    }
 
-        g.fillStyle = this.colors[1];
-        g.fillRect(50, 50, 600, 300);
-        
+    buildRectangles(g, results, names) {
+        let N = results.length;
+        if (N === 0) {
+            alert('без завантажених результатів діаграма не запуститься. Для завантаження натисніть завантажити данні!');
+        } else {
+
+           
+           this._buildAxios(g);
+            let w = (this.canvasWidth - 20) / N - 5;
+            let k = Math.max.apply(null, results) / (this.canvasHeight - 20);
+            g.font = '10pt Arial'
+            // next
+            for (let i = 0; i < N; i++) {
+                let h = results[i] / k - 5;
+                let x = i * (w + 5) + 10;
+                let y = this.canvasHeight - 10 - h;
+                // next (colors)
+                g.fillstyle = this.colors[i];
+                g.fillRect(x, y, w, h);
+                g.fillText(names[i], x + 2, y - 5);
+            }
+        }
     }
 
 

@@ -46,7 +46,7 @@ export class Controller {
         $('tbody').html('');
         this.names.length = 0;
         this.results.length = 0;
-
+        this.drawer.initCanvas();
     }
 
 
@@ -71,10 +71,9 @@ export class Controller {
 
     activateRectButton() {
         $('#rect-btn').click(() => {
-
             console.log('rect btn is working');
             let context = this.drawer.context;
-            this.drawer.buildAxios(context);
+            this.drawer.buildRectangles(context, this.results, this.names);
         });
     }
 
