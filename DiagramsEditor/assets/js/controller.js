@@ -77,6 +77,14 @@ export class Controller {
         });
     }
 
+    activateCircleButton() {
+        $('#circle-btn').click(() => {
+            console.log('CircleButton is working');
+            let context = this.drawer.context;
+            this.drawer.buildPies(context, this.results, this.names)
+        })
+    }
+
 
 
 };

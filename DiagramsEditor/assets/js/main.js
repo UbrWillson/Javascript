@@ -11,4 +11,5 @@ $(document).ready(() => {
     controller.activateLoadButton();
     controller.activateResetButton();
     controller.activateRectButton();
+    controller.activateCircleButton();
 })

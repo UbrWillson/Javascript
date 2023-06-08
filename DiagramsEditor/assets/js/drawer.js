@@ -3,7 +3,7 @@ export class Drawer {
 
 context = null;                 // контекст графічної панелі canvas
 colors = [                      // масив кольорів для зафарбовування діаграм
-    'red', 'green', 'blue', 'purple', 'orange', 'grey', 'darkcyan', 'bisque', 'silver', 'lavender', 'navy'
+    'coral', 'lightgreen', 'lightblue', 'purple', 'orange', 'lightgrey', 'darkcyan', 'bisque', 'silver', 'lavender', 'navy'
     ];
     canvasWidth = 700;
     canvasHeight = 500;
@@ -65,5 +65,26 @@ colors = [                      // масив кольорів для зафар
         }
     }
 
+
+    buildPies(g, results, names) {
+        let N = results.length;
+        if (N === 0) {
+            alert('без завантажених результатів діаграма не запуститься. Для завантаження натисніть завантажити данні!');
+        } else {
+            console.log('побудова кола')
+            let centerX = this.canvasWidth / 2;
+            let centerY = this.canvasHeight / 2;
+            g.clearRect(0,0,this.canvasWidth,this.canvasHeight);
+
+            g.strokeStyle = this.colors[0];
+            g.fillStyle = this.colors[5];
+            g.lineWidth = 5;
+
+            g.beginPath();
+            g.arc(centerX, centerY, 150, 0, Math.PI);
+            g.stroke();
+            g.fill();
+        }
+    }
 
 }
