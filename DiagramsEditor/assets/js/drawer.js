@@ -3,7 +3,7 @@ export class Drawer {
 
 context = null;                 // контекст графічної панелі canvas
 colors = [                      // масив кольорів для зафарбовування діаграм
-    'coral', 'lightgreen', 'lightblue', 'purple', 'orange', 'lightgrey', 'darkcyan', 'bisque', 'silver', 'lavender', 'navy'
+    'coral', 'lightgreen', 'lightblue', 'purple', 'orange', 'lightgray', 'darkcyan', 'bisque', 'silver', 'lavender', 'navy'
     ];
     canvasWidth = 700;
     canvasHeight = 500;
@@ -74,16 +74,45 @@ colors = [                      // масив кольорів для зафар
             console.log('побудова кола')
             let centerX = this.canvasWidth / 2;
             let centerY = this.canvasHeight / 2;
+            let radius = 150;
+            //
             g.clearRect(0,0,this.canvasWidth,this.canvasHeight);
-
-            g.strokeStyle = this.colors[0];
-            g.fillStyle = this.colors[5];
-            g.lineWidth = 5;
-
-            g.beginPath();
-            g.arc(centerX, centerY, 150, 0, Math.PI);
-            g.stroke();
-            g.fill();
+            g.strokeStyle = 'navy';
+            g.lineWidth = 3;
+            // next
+            let s = 0;
+            for (let x of results){
+                s += x;
+            }
+            let k = s / (2 * Math.PI);
+            console.log(s);
+            console.log(k);
+            let LastAngle = 0;
+            // next
+           
+            for (let i = 0; i < N; i++) {
+                let a1 = 0;
+                let a2 = 0;
+                // next
+                if( i == 0) {
+                    a1 = 0;
+                    a2 = results[i] / k;
+                } else {
+                    a1 = LastAngle;
+                    let a2 = LastAngle + results[i] / k;
+                }
+                LastAngle = a2;
+                g.fillStyle = this.colors[i];
+                
+                // next
+                g.beginPath();
+                g.moveTo(centerX, centerY);
+                g.arc(centerX, centerY, radius, a1, a2);
+                // next
+                g.lineTo(centerX,centerY);
+                g.stroke();
+                g.fill();
+            }        
         }
     }
 
