@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="icon" href="./assets/img/favicon.ico">
+    <title>Weather Informer</title>
+</head>
+<body>
+    <header>    
+        <h1>Weather Informer</h1>
+    </header>
+    <main> 
+    <section id="data">
+        <fieldset>
+            <legend>
+                Choose city for gaining information about weather
+            </legend>
+            <p>
+                <label for="city">City:</label>
+                <input type="text" id="city" placeholder="введіть назву міста для пошуку ...">
+            </p>
+            <p>
+                <button id="get-weather">recieve the weather info</button>
+                <button id="res-weather">clear weather info</button>
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>
+                watch the weather in choosen city
+            </legend>
+            <div id="display">
+                <!-- weather info data placeholder -->
+            </div>
+        </fieldset>
+    </section>    
+    </main>
+    <footer>  <h4>Copyright: &copy; IT Step&trade; - Kyiv, 2023</h4>  </footer>
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./scripts/main.js"></script>
+</body>
+</html>

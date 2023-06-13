@@ -1,0 +1,25 @@
+body {
+    text-align: center;
+    padding: 5px 5%;
+    font: 12pt 'Comic Sans MS';
+    color: grey;
+}
+
+header > h1 {
+    color: purple;
+}
+
+footer > h4{
+    color: pink;
+}
+
+fieldset {
+margin-top: 15px;
+border: 1px solid silver;
+border-radius: 15px;
+}
+
+legend {
+    text-align: left;
+    color: navy;
+}
