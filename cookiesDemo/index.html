@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="icon" href="./assets/img/favicon.ico">
+    <title>Cookies Demo</title>
+
+</head>
+<body>
+    <div id="main-box">
+        <h1>Basic Operations with cookie files</h1>
+        <hr>
+        <fieldset id="fs-1">
+            <legend>Insert Data</legend>
+            <div class="group-box">
+                <label for="val">Key fragment:</label> <br>
+                <input type="text" id="key">
+            </div>
+            &nbsp;
+            <div class="group-box">
+                <label for="val">Значення:</label> <br>
+                <input type="text" id="key">
+            </div>
+            &nbsp;
+            <div class="group-box">
+                <label for="expire">expire time(days):</label> <br>
+                <input type="number" id="exp" min="0" max="365" value="0">
+            </div>
+        </fieldset>
+        <fieldset id="fs-2">
+            <legend>Operation control</legend>
+            <button id="b1">create</button>
+            <button id="b2">show</button>
+            <button id="b3">find</button>
+            <button id="b4">change</button>
+            <button id="b5">delete</button>
+            <button id="b6">clear</button>
+        </fieldset>
+        <fieldset id="fs-3">
+            <legend>Watching results</legend>
+            <table id="res" border="1">
+                <thead>
+                    <tr><th>
+                        key
+                    </th>
+                    <th>
+                        info
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                    <!-- Results Placeholder -->
+
+                </tbody>
+            </table>
+        </fieldset>
+    </div>
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./scripts/services/cookies_manager.js" type="module"></script>
+    <script src="./scripts/services/validator.js" type="module"></script>
+    <script src="./scripts/services/controller.js" type="module"></script>
+    <script src="./scripts/main.js" type="module"></script>
+    
+    
+</body>
+</html>

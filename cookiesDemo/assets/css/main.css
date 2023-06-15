@@ -1,0 +1,76 @@
+* {font: 12pt 'Georgia';
+background-color: black;
+
+}
+
+
+#main-box {
+    color: white;
+    text-align: center;
+    width: 50%;
+    margin: 30px auto;
+    
+
+}
+
+h1{ color: whitesmoke;}
+
+fieldset {
+    border: 1px solid white;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+
+legend {color: whitesmoke;
+text-align: left;
+font-style: italic;
+}
+
+label {
+    color: white;
+    border-radius: 25px;
+
+    
+}
+.group-box {
+    display: inline-block;
+    text-align: left;
+}
+
+input {
+    color: white;
+    padding: 5px;
+    width: 150px;
+}
+
+
+button {
+    width: 85px;
+    color: aliceblue;
+    background-color: grey;
+    padding: 5px 10px;
+    border-radius: 12px;
+    margin: 2px;
+
+}
+
+button:hover {
+ color: white;
+ background-color: black;
+ cursor: pointer;
+
+}
+
+table {
+    width: 75%;
+    margin: 10px auto;
+
+}
+
+th,
+td {
+    padding: 5px;
+    color: white;
+
+}
