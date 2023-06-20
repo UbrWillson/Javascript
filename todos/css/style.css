@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    padding-top: 50px;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+/* todos */
+
+.todos-block {}
+.todo-list {margin-top: 20px;
+box-shadow: 2px 2px 5px black;
+padding: 10px;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.todo-item:nth-child(odd) {
+    background-color: aliceblue;
+}
+.todo-item__input {}
+.todo-item__input input {}
+.todo-item__text {
+    margin-right: auto;
+}
+.todo-item__btns {}
+
+.action-btn {}
+.action-btn {
+    border: none;
+    padding: 10px;
+}
+.action-btn_del {background-color: tomato;
+color: white;
+}
