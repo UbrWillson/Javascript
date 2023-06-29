@@ -48,3 +48,5 @@ const products = [
 //         new Set(prodArr.map(prod => prod.category))
 //     );
 // }
+
+
