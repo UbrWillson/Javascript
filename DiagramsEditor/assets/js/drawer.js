@@ -1,12 +1,24 @@
 export class Drawer {
 //Props:
+static getRandomColor() { 
+    const letters = '123456789ABCDEF';
+    let color = '#';
+    for(let i = 0; i < 6; i++){
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+};
+
+
 
 context = null;                 // контекст графічної панелі canvas
 colors = [                      // масив кольорів для зафарбовування діаграм
-    'coral', 'lightgreen', 'lightblue', 'purple', 'orange', 'lightgray', 'darkcyan', 'bisque', 'silver', 'lavender', 'navy'
+    'coral', 'green', 'blue', 'purple', 'orange', 'gray', 'cyan', 'bisque', 'silver', 'lavender', 'navy'
     ];
     canvasWidth = 700;
     canvasHeight = 500;
+
+    
 
     constructor() {
 
@@ -41,6 +53,8 @@ colors = [                      // масив кольорів для зафар
   
     }
 
+    
+
     buildRectangles(g, results, names) {
         let N = results.length;
         if (N === 0) {
@@ -58,7 +72,8 @@ colors = [                      // масив кольорів для зафар
                 let x = i * (w + 5) + 10;
                 let y = this.canvasHeight - 10 - h;
                 // next (colors)
-                g.fillstyle = this.colors[i];
+                let randomColor = Drawer.getRandomColor();
+                g.fillStyle = randomColor;
                 g.fillRect(x, y, w, h);
                 g.fillText(names[i], x + 2, y - 5);
             }
@@ -66,54 +81,73 @@ colors = [                      // масив кольорів для зафар
     }
 
 
+
     buildPies(g, results, names) {
         let N = results.length;
         if (N === 0) {
-            alert('без завантажених результатів діаграма не запуститься. Для завантаження натисніть завантажити данні!');
+          alert('без завантажених результатів діаграма не запуститься. Для завантаження натисніть завантажити данні!');
         } else {
-            console.log('побудова кола')
-            let centerX = this.canvasWidth / 2;
-            let centerY = this.canvasHeight / 2;
-            let radius = 150;
-            //
-            g.clearRect(0,0,this.canvasWidth,this.canvasHeight);
-            g.strokeStyle = 'navy';
-            g.lineWidth = 3;
+          console.log('побудова кола')
+          let centerX = this.canvasWidth / 2;
+          let centerY = this.canvasHeight / 2;
+          let radius = 150;
+          //
+          g.clearRect(0,0,this.canvasWidth,this.canvasHeight);
+          g.strokeStyle = 'navy';
+          g.lineWidth = 3;
+          // next
+          let s = 0;
+          for (let x of results){
+            s += x;
+          }
+          let k = s / (2 * Math.PI);
+          console.log(s);
+          console.log(k);
+          let LastAngle = 0;
+          // next
+      
+          for (let i = 0; i < N; i++) {
+            let a1 = 0;
+            let a2 = 0;
             // next
-            let s = 0;
-            for (let x of results){
-                s += x;
+            if( i == 0) {
+              a1 = 0;
+              a2 = results[i] / k;
+            } else {
+              a1 = LastAngle;
+              a2 = LastAngle + results[i] / k;
             }
-            let k = s / (2 * Math.PI);
-            console.log(s);
-            console.log(k);
-            let LastAngle = 0;
+            LastAngle = a2;
+            g.fillStyle = this.colors[i];
+      
             // next
-           
-            for (let i = 0; i < N; i++) {
-                let a1 = 0;
-                let a2 = 0;
-                // next
-                if( i == 0) {
-                    a1 = 0;
-                    a2 = results[i] / k;
-                } else {
-                    a1 = LastAngle;
-                    let a2 = LastAngle + results[i] / k;
-                }
-                LastAngle = a2;
-                g.fillStyle = this.colors[i];
-                
-                // next
-                g.beginPath();
-                g.moveTo(centerX, centerY);
-                g.arc(centerX, centerY, radius, a1, a2);
-                // next
-                g.lineTo(centerX,centerY);
-                g.stroke();
-                g.fill();
-            }        
+            g.beginPath();
+            g.moveTo(centerX, centerY);
+            g.arc(centerX, centerY, radius, a1, a2);
+            // next
+            g.lineTo(centerX, centerY);
+            g.stroke();
+            g.fill();
+          }
+      
+          this.createLegend(names); 
         }
+      }
+    
+      createLegend(names) {
+        const legendContainer = document.getElementById('legend');
+        let legendHTML = '';
+        for (let i = 0; i < names.length; i++) {
+          legendHTML += `<div><span style="background-color: ${this.colors[i]}"></span>${names[i]}</div>`;
+        }
+        legendContainer.innerHTML = legendHTML;
+      }
     }
+   
+    
+    
+    
+    
+    
+    
 
-}

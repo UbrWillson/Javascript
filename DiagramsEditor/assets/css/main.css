@@ -54,3 +54,23 @@ button {
 canvas {
     border: 1px solid silver;
 }
+#legend {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+#legend div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+#legend span {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 5px;
+    border-radius: 50%;
+}
