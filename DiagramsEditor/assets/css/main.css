@@ -56,15 +56,17 @@ canvas {
 }
 #legend {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-top: 20px;
     font-family: Arial, sans-serif;
+ 
 }
 
 #legend div {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
+    margin-right: 3px;
 }
 
 #legend span {

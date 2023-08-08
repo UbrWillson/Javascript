@@ -130,12 +130,13 @@ colors = [                      // масив кольорів для зафар
             g.fill();
           }
       
-          this.createLegend(names); 
+          
         }
+        this.createLegend(names); 
       }
     
       createLegend(names) {
-        const legendContainer = document.getElementById('legend');
+        const legendContainer = document.querySelector('#legend');
         let legendHTML = '';
         for (let i = 0; i < names.length; i++) {
           legendHTML += `<div><span style="background-color: ${this.colors[i]}"></span>${names[i]}</div>`;
