@@ -1,0 +1,46 @@
+@font-face{font-family: mandalore;
+src:url(../fonts/mandalore.ttf)
+}
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: mandalore;
+    font-size: 30px;
+}
+body{background-image: url(../img/Swapi_bg.jpg);
+background-size: cover;
+}
+.container{display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 90px;
+border-radius: 10px;
+}
+.background-cards{background-color: black;
+display: flex;
+flex-direction: column;
+padding: 50px;
+border-radius: 20px;
+color: #ffe81f;
+
+}
+
+.sw_card{border: 1px solid black;
+border-radius: 3px;
+margin-bottom: 10px;
+
+}
+
+
+.btn{cursor: pointer;
+border-radius: 10px;
+padding: 10px 25px;
+background-color: RGB(255, 33, 46);
+}
+.btn:hover{background-color: RGB(21,242,253);
+color: white;
+transition: 1s;
+}
+

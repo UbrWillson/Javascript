@@ -8,35 +8,48 @@
     <title>JavaScript</title>
 </head>
 <body>
+<div class="container">
+<div class="background-cards">
 <h1>
-Planets from the star wars series
-</h1>
-<ul>
-    <li>
+Star Wars Planets
+</h1> <br>
+<ul class="list_wrap">
+    <li class="sw_card">
         <h3>
             Name of the planet:
         </h3>
-        <p>000000</p>
+        <hr>
+        <p id="name">000000</p>
     </li>
-    <li>
+    <li class="sw_card">
         <h3>
             Gravity of the planet:
         </h3>
-        <p>000000</p>
+        <hr>
+        <p id="gravity">000000</p>
     </li>
-    <li>
+    <li class="sw_card">
         <h3>
             Climate of the planet:
         </h3>
-        <p>000000</p>
+        <hr>
+        <p id="climate">000000</p>
     </li>
-    <li>
+    <li class="sw_card">
         <h3>
             Terrain of the planet:
         </h3>
-        <p>0000000</p>
+        <hr>
+        <p id="terrain">000000</p>
     </li>
 </ul>
+<div class="btn_wrap">
+    <audio src="./sounds/lightsaber_sfx.mp3" id="lb_sound"></audio>
+    <button class="btn">Next</button>
+    
+</div>
+</div>
+</div>
 <noscript>У вас не працює JavaScript</noscript>
     <script src="./scripts/index.js" async></script>
 </body>
