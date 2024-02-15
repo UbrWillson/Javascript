@@ -32,6 +32,18 @@ transform: scale(1.1);
 }
 
 
+
+.btn-breed{background: purple;
+border-radius: 10px;
+padding: 10px;
+border: 0;
+}
+
+.btn-breed:hover{transition: 0.5s;
+transform: scale(1.1);
+}
+
+
 #text{border-radius: 10px;}
 
 .input-wrap{display: flex;
