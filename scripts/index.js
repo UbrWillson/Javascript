@@ -31,3 +31,5 @@ btnB.onclick = function dog_list() {
             console.error("Помилка при отриманні зображення собаки:", error);
         });
 }
+
+
